@@ -18,6 +18,7 @@ class FlxHitbox extends FlxSpriteGroup
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
 	public var buttonUp:FlxButton = new FlxButton(0, 0);
 	public var buttonRight:FlxButton = new FlxButton(0, 0);
+        public var buttonFifth:FlxButton = new FlxButton(0, 0);
 
 	/**
 	 * Create the zone.

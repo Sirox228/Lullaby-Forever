@@ -27,8 +27,8 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 
-		final offsetFir:Int = (Init.trueSettings.get('HitboxPos') ? Std.int(FlxG.height / 4) * 3 : 0);
-		final offsetSec:Int = (Init.trueSettings.get('HitboxPos') ? 0 : Std.int(FlxG.height / 4));
+		final offsetFir:Int = (Init.trueSettings.get('5th Hitbox Position') ? Std.int(FlxG.height / 4) * 3 : 0);
+		final offsetSec:Int = (Init.trueSettings.get('5th Hitbox Position') ? 0 : Std.int(FlxG.height / 4));
 
 		switch (song)
 		{

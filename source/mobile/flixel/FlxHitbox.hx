@@ -30,6 +30,8 @@ class FlxHitbox extends FlxSpriteGroup
 		final offsetFir:Int = (Init.trueSettings.get('5th Hitbox Position') ? Std.int(FlxG.height / 4) * 3 : 0);
 		final offsetSec:Int = (Init.trueSettings.get('5th Hitbox Position') ? 0 : Std.int(FlxG.height / 4));
 
+                lime.app.Application.current.window.alert(Std.string(song), "hitbox");
+
 		switch (song)
 		{
 			case 'monochrome':

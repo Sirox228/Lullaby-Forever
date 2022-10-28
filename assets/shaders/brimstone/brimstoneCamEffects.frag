@@ -1,7 +1,7 @@
 #pragma header
 
 float threshold = 0.125; // Threshold for dithering (0.0045 found to be optimal)
-uniform float intensity = 0.0;
+uniform float intensity;
 mat2 dither_2 = mat2(0.,1.,1.,0.);
 
 struct dither_tile {

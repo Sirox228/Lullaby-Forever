@@ -7,7 +7,7 @@
  *
  */
 
-uniform float interpolation = 0.5;
+uniform float interpolation;
 
 float threshold = 0.125;
 mat2 dither_2 = mat2(0.,1.,1.,0.);

@@ -1,9 +1,9 @@
 #pragma header
 
 #define PI 3.14159265
-uniform float time = 0.0;
-uniform float intensity = 0.0;
-uniform float initial = 0.0;
+uniform float time;
+uniform float intensity;
+uniform float initial;
 
 float sat( float t ) {
 	return clamp( t, 0.0, 1.0 );

@@ -1136,6 +1136,7 @@ class PlayState extends MusicBeatState
 
                 #if mobile
 		_hitbox = new FlxHitbox(curSong.toLowerCase(), playerLane - 1);
+                controls.setHitBox(_hitbox);
                 _hitbox.cameras = [camHUD];
                 _hitbox.visible = false;
                 add(_hitbox);

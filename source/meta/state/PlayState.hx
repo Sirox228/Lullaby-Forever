@@ -74,6 +74,9 @@ import openfl.filters.BitmapFilter;
 import openfl.filters.ShaderFilter;
 import openfl.media.Sound;
 import openfl.utils.Assets;
+#if android
+import mobile.flixel.FlxHitbox;
+#end
 
 using StringTools;
 
@@ -88,6 +91,9 @@ enum abstract GameModes(String) to String
 class PlayState extends MusicBeatState
 {
 	public var startTimer:FlxTimer;
+        #if mobile
+        public var _hitbox:FlxHitbox;
+        #end
 
 	public static var curStage:String = '';
 	public static var SONG:SwagSong;
@@ -1128,9 +1134,12 @@ class PlayState extends MusicBeatState
 			];
 		}
 
-		#if mobile
-		addMobileControls();
-		#end
+                #if mobile
+		_hitbox = new FlxHitbox(curSong.toLowerCase(), playerLane - 1);
+                _hitbox.cameras = [camHUD];
+                _hitbox.visible = false;
+                add(_hitbox);
+                #end
 
 		if (!Init.trueSettings.get('Controller Mode'))
 		{
@@ -4026,7 +4035,7 @@ class PlayState extends MusicBeatState
 		{
 			canPause = false;
 			#if mobile
-			mobileControls.visible = false;
+			_hitbox.visible = false;
 			#end
 			songMusic.volume = 0;
 			vocals.volume = 0;
@@ -4288,7 +4297,7 @@ class PlayState extends MusicBeatState
 		inCutscene = false;
 
 		#if mobile
-		mobileControls.visible = true;
+		_hitbox.visible = true;
 		#end
 
 		Conductor.songPosition = -(Conductor.crochet * 5);

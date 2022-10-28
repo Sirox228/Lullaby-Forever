@@ -54,6 +54,7 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		'Auto Pause' => [true, Checkmark, '', NOT_FORCED],
+                '5th Hitbox Position' => [false, Checkmark, 'Customize position of 5th hitbox, on - top, off - bottom', NOT_FORCED],
 		'FPS Counter' => [true, Checkmark, 'Whether to display the FPS counter.', NOT_FORCED],
 		'Memory Counter' => [
 			true,

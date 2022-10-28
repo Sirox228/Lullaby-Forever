@@ -60,7 +60,7 @@ class MusicBeatState extends FNFUIState
 			remove(virtualPad);
 	}
 
-	public function addMobileControls(DefaultDrawTarget:Bool = true)
+	/*public function addMobileControls(DefaultDrawTarget:Bool = true)
 	{
 		mobileControls = new MobileControls();
 
@@ -85,7 +85,7 @@ class MusicBeatState extends FNFUIState
 		mobileControls.cameras = [camControls];
 		mobileControls.visible = false;
 		add(mobileControls);
-	}
+	}*/
 
 	public function removeMobileControls()
 	{

@@ -53,6 +53,7 @@ import meta.data.ScriptHandler;
 import meta.data.Song.SwagSong;
 import meta.data.Song;
 import meta.data.Timings;
+import flixel.util.FlxDestroyUtil;
 #if DISCORD_ALLOWED
 import meta.data.dependency.Discord;
 #end
@@ -1788,6 +1789,12 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+		}
+
+                if (_hitbox != null)
+		{
+			_hitbox = FlxDestroyUtil.destroy(_hitbox);
+			_hitbox = null;
 		}
 
 		super.destroy();

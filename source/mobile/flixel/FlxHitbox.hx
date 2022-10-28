@@ -49,7 +49,7 @@ class FlxHitbox extends FlxSpriteGroup
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x8B0000));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0x8B0000));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0x8B0000));
-			case 'death-toll':
+			case 'death toll':
 			    add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFA500));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFA500));
 				add(buttonUp = createHint(FlxG.width / 2, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFA500));
@@ -60,7 +60,7 @@ class FlxHitbox extends FlxSpriteGroup
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF0000));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF0000));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF0000));
-			case 'safety-lullaby' | 'left-unchecked' | 'lost-cause':
+			case 'safety lullaby' | 'left unchecked' | 'lost cause':
 			    add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFF00FF));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FFFF));
 				add(buttonUp = createHint(FlxG.width / 2, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x00FF00));
@@ -72,7 +72,7 @@ class FlxHitbox extends FlxSpriteGroup
 				add(buttonUp = createHint(FlxG.width / 2, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x80FFFFFF));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0x80FFFFFF));
 				add(buttonFifth = createHint(0, offsetFir, FlxG.width, Std.int(FlxG.height / 4), 0x80FFFFFF));
-			case 'bygone-purpose':
+			case 'bygone purpose':
 			    add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0x000000));
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x000000));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0x000000));
@@ -82,7 +82,7 @@ class FlxHitbox extends FlxSpriteGroup
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x808080));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0x808080));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0x808080));
-			case 'pasta-night':
+			case 'pasta night':
 			    var col:Int = 0xFFFFFF;
 			    switch (pastachar) {
 				    case 0:

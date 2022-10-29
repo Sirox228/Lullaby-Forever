@@ -9,6 +9,7 @@ import openfl.display3D._internal.GLShader;
 import openfl.utils.ByteArray;
 import openfl.utils._internal.Float32Array;
 import openfl.utils._internal.Log;
+using StringTools;
 
 /**
 	// TODO: Document GLSL Shaders
@@ -475,6 +476,48 @@ class Shader
 		if (__context != null && program == null)
 		{
 			var gl = __context.gl;
+                        var vertshaderext = "";
+                        var fragshaderext = "";
+                        var vertshaderversion = "";
+                        var fragshaderversion = "";
+
+                        if (glVertexSource.contains("#extension")) {
+                            for (str in glVertexSource.split('\n')) {
+                                if (str.contains("#extension") {
+                                    vertshaderext += str + '\n';
+                                    glVertexSource = glVertexSource.replace(str, "");
+                                }
+                            }
+                        }
+
+                        if (glFragmentSource.contains("#extension")) {
+                            for (str in glFragmentSource.split('\n')) {
+                                if (str.contains("#extension") {
+                                    fragshaderext += str + '\n';
+                                    glFragmentSource = glFragmentSource.replace(str, "");
+                                }
+                            }
+                        }
+
+                        if (glVertexSource.contains("#version")) {
+                            for (str in glVertexSource.split('\n')) {
+                                if (str.contains("#version") {
+                                    vertshaderversion = str;
+                                    glVertexSource = glVertexSource.replace(str, "");
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (glFragmentSource.contains("#version")) {
+                            for (str in glFragmentSource.split('\n')) {
+                                if (str.contains("#version") {
+                                    fragshaderversion = str;
+                                    glFragmentSource = glFragmentSource.replace(str, "");
+                                    break;
+                                }
+                            }
+                        }
 
 			var prefix = "#ifdef GL_ES
 				"
@@ -487,8 +530,8 @@ class Shader
 				#endif
 				";
 
-			var vertex = prefix + glVertexSource;
-			var fragment = prefix + glFragmentSource;
+			var vertex = vertshaderversion + vertshaderext + prefix + glVertexSource;
+			var fragment = fragshaderversion + fragshaderext + prefix + glFragmentSource;
 
 			var id = vertex + fragment;
 

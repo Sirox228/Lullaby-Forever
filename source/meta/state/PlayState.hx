@@ -1836,6 +1836,8 @@ class PlayState extends MusicBeatState
 
 	static var accuracyThreshold:Float = 90;
 
+        var shit:Bool = false;
+
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
@@ -2177,8 +2179,13 @@ class PlayState extends MusicBeatState
 							}
 
 							// /*
-							if (controls.SPACE_P || (strumLines.members[playerLane].autoplay && canHitPendulum && !alreadyHit))
-							{
+                                                        if (controls.SPACE_P != null) {
+                                                            if (!shit) { //debugging
+                                                                lime.app.Application.current.window.alert(Std.string(strumLines.members[playerLane].autoplay) + '\n' + Std.string(canHitPendulum) + '\n' + Std.string(alreadyHit)), "debug");
+                                                                shit = true;
+                                                            }
+							    if (controls.SPACE_P || (strumLines.members[playerLane].autoplay && canHitPendulum && !alreadyHit))
+							    {
 								if (canHitPendulum)
 								{
 									canHitPendulum = false;
@@ -2187,7 +2194,8 @@ class PlayState extends MusicBeatState
 								}
 								else
 									losePendulum(true);
-							}
+							    }
+                                                        }
 						}
 						// fuck you let me fix this with delta
 						trance -= (((Conductor.bpm / 200) / 1000) * (elapsed / (1 / 90)));

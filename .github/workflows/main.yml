@@ -14,12 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Setup Android NDK
-        uses: nttld/setup-ndk@main
-        id: setup-ndk
-        with:
-          ndk-version: r21e
-
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
@@ -39,7 +33,12 @@ jobs:
           haxelib --quiet install lime 7.9.0
           haxelib --quiet install openfl 9.1.0
           haxelib --quiet install flixel
-          haxelib --quiet --never run lime setup
+          git clone https://github.com/Sirox228/hxcpp-new-ndk-support
+          haxelib dev hxcpp hxcpp-new-ndk-support
+          cd hxcpp-new-ndk-support/tools/hxcpp
+          haxe compile.hxml
+          cd ../../../
+          haxelib --quiet install lime-samples
           haxelib --quiet install flixel-ui
           haxelib --quiet install flixel-addons
           haxelib --quiet install hscript
@@ -57,10 +56,9 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
+          haxelib dev hxcpp hxcpp-new-ndk-support
           haxelib list
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-
+        
       - name: Compile
         run: haxelib run lime build android -release
 
@@ -75,12 +73,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Setup Android NDK
-        uses: nttld/setup-ndk@main
-        id: setup-ndk
-        with:
-          ndk-version: r21e
-
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
@@ -100,7 +92,12 @@ jobs:
           haxelib --quiet install lime 7.9.0
           haxelib --quiet install openfl 9.1.0
           haxelib --quiet install flixel
-          haxelib --quiet --never run lime setup
+          git clone https://github.com/Sirox228/hxcpp-new-ndk-support
+          haxelib dev hxcpp hxcpp-new-ndk-support
+          cd hxcpp-new-ndk-support/tools/hxcpp
+          haxe compile.hxml
+          cd ../../../
+          haxelib --quiet install lime-samples
           haxelib --quiet install flixel-ui
           haxelib --quiet install flixel-addons
           haxelib --quiet install hscript
@@ -118,9 +115,8 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
+          haxelib dev hxcpp hxcpp-new-ndk-support
           haxelib list
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
         run: haxelib run lime build android -debug

@@ -14,11 +14,11 @@ import mobile.flixel.FlxButton;
  */
 class FlxHitbox extends FlxSpriteGroup
 {
-	public var buttonLeft:FlxButton = new FlxButton(0, 0);
-	public var buttonDown:FlxButton = new FlxButton(0, 0);
-	public var buttonUp:FlxButton = new FlxButton(0, 0);
-	public var buttonRight:FlxButton = new FlxButton(0, 0);
-        public var buttonFifth:FlxButton = new FlxButton(0, 0);
+	public var buttonLeft:FlxButton;
+	public var buttonDown:FlxButton;
+	public var buttonUp:FlxButton;
+	public var buttonRight:FlxButton;
+        public var buttonFifth:FlxButton;
 
 	/**
 	 * Create the zone.
@@ -26,6 +26,12 @@ class FlxHitbox extends FlxSpriteGroup
 	public function new(song:String, pastachar:Int = 0)
 	{
 		super();
+
+                buttonLeft = new FlxButton(0, 0);
+                buttonDown = new FlxButton(0, 0);
+                buttonUp = new FlxButton(0, 0);
+                buttonRight = new FlxButton(0, 0);
+                buttonFifth = new FlxButton(0, 0);
 
 		final offsetFir:Int = (Init.trueSettings.get('5th Hitbox Position') ? Std.int(FlxG.height / 4) * 3 : 0);
 		final offsetSec:Int = (Init.trueSettings.get('5th Hitbox Position') ? 0 : Std.int(FlxG.height / 4));

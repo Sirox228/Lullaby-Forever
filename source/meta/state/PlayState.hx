@@ -1143,6 +1143,8 @@ class PlayState extends MusicBeatState
                 _hitbox.cameras = [hcam];
                 _hitbox.visible = false;
                 controls.setHitBox(_hitbox);
+                trackedinputsMobileControls = controls.trackedinputsNOTES;
+		controls.trackedinputsNOTES = [];
                 add(_hitbox);
                 #end
 

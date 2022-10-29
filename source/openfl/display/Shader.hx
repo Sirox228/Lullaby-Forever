@@ -483,7 +483,7 @@ class Shader
 
                         if (glVertexSource.contains("#extension")) {
                             for (str in glVertexSource.split('\n')) {
-                                if (str.contains("#extension") {
+                                if (str.contains("#extension")) {
                                     vertshaderext += str + '\n';
                                     glVertexSource = glVertexSource.replace(str, "");
                                 }
@@ -492,7 +492,7 @@ class Shader
 
                         if (glFragmentSource.contains("#extension")) {
                             for (str in glFragmentSource.split('\n')) {
-                                if (str.contains("#extension") {
+                                if (str.contains("#extension")) {
                                     fragshaderext += str + '\n';
                                     glFragmentSource = glFragmentSource.replace(str, "");
                                 }
@@ -501,7 +501,7 @@ class Shader
 
                         if (glVertexSource.contains("#version")) {
                             for (str in glVertexSource.split('\n')) {
-                                if (str.contains("#version") {
+                                if (str.contains("#version")) {
                                     vertshaderversion = str;
                                     glVertexSource = glVertexSource.replace(str, "");
                                     break;
@@ -511,7 +511,7 @@ class Shader
 
                         if (glFragmentSource.contains("#version")) {
                             for (str in glFragmentSource.split('\n')) {
-                                if (str.contains("#version") {
+                                if (str.contains("#version")) {
                                     fragshaderversion = str;
                                     glFragmentSource = glFragmentSource.replace(str, "");
                                     break;

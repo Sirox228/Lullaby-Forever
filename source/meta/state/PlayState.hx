@@ -2181,7 +2181,7 @@ class PlayState extends MusicBeatState
 							// /*
                                                         if (controls.SPACE_P != null) {
                                                             if (!shit) { //debugging
-                                                                lime.app.Application.current.window.alert(Std.string(strumLines.members[playerLane].autoplay) + '\n' + Std.string(canHitPendulum) + '\n' + Std.string(alreadyHit)), "debug");
+                                                                lime.app.Application.current.window.alert(Std.string(strumLines.members[playerLane].autoplay) + '\n' + Std.string(canHitPendulum) + '\n' + Std.string(alreadyHit), "debug");
                                                                 shit = true;
                                                             }
 							    if (controls.SPACE_P || (strumLines.members[playerLane].autoplay && canHitPendulum && !alreadyHit))

@@ -30,6 +30,10 @@ function initFunction(params) {
 	PlayState.instance.stageBuild.forEach(function(sprite:FlxSprite)
 	{
 		var desaturateShader = new FlxGraphicsShader("", Paths.shader('desaturation'));
+		desaturateShader.data.desaturationAmount.value = [0.0];
+		desaturateShader.data.distortionTime.value = [0.0];
+		desaturateShader.data.amplitude.value = [-0.1];
+		desaturateShader.data.frequency.value = [8.0];
 		sprite.shader = desaturateShader;
 	});
 	PlayState.instance.desaturateAmount = 0;

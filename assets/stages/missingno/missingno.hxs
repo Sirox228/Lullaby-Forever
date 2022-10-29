@@ -71,7 +71,9 @@ function onEvent(event) {
 			startGlitching = true;
 
 			backgroundShader = new FlxGraphicsShader("", Paths.shader('glitch'));
-			backgroundShader.data.prob.value = [0];
+			backgroundShader.data.time.value = [0.0];
+			backgroundShader.data.prob.value = [0.0];
+			backgroundShader.data.intensityChromatic.value = [0.0];
 			background.shader = backgroundShader;
 
 			missingnoShader = new FlxGraphicsShader("", Paths.shader('missingno/individualGlitches'));

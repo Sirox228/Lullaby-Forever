@@ -172,7 +172,12 @@ class ShopState extends MusicBeatState
 		}
 
 		glitchingno = new FlxGraphicsShader("", Paths.shader('glitch'));
+		glitchingno.data.time.value = [0.0];
+		glitchingno.data.prob.value = [0.0];
+		glitchingno.data.intensityChromatic.value = [0.0];
+
 		chromaticAberration = new ShaderFilter(new GraphicsShader("", Paths.shader('shopShader')));
+		chromaticAberration.shader.data.aberration.value = [0.0];
 		chromaticAberration.shader.data.effectTime.value = [aberrateTimeValue];
 		FlxG.camera.setFilters([chromaticAberration]);
 

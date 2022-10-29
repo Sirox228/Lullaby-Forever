@@ -320,6 +320,8 @@ function onEvent(eventName) {
 			//blackScreenCover.visible = true;
 
 			aberrationShader = new ShaderFilter(new GraphicsShader("", Paths.shader('aberration')));
+			aberrationShader.shader.data.aberration.value = [0.0];
+			aberrationShader.shader.data.effectTime.value = [0.0];
 			PlayState.dialogueHUD.setFilters([aberrationShader]);
 
 			new FlxTimer().start(10.12, function(tmr:FlxTimer)

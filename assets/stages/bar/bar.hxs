@@ -239,6 +239,7 @@ function onCreate() {
 	//filmGrain = new ShaderFilter(new GraphicsShader("", Paths.shader('filmgrain')));
 	//PlayState.camGame.setFilters([filmGrain]);
 	filmGrain = new ShaderFilter(new GraphicsShader("", Paths.shader('old')));
+	filmGrain.shader.data.iTime.value = [0.0];
 	PlayState.camGame.setFilters([filmGrain]);
 }
 

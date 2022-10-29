@@ -534,6 +534,7 @@ class GameOverSubstate extends MusicBeatSubState
 				FlxG.cameras.reset(deathCam);
 
 				var crt:ShaderFilter = new ShaderFilter(new GraphicsShader("", Paths.shader('crt')));
+				crt.shader.data.time.value = [0.0];
 				deathCam.setFilters([crt]);
 				// lmao
 				deathCam.x += (FlxG.width / 2 - deathCam.width / 2);
@@ -683,12 +684,9 @@ class GameOverSubstate extends MusicBeatSubState
 					FlxCamera.defaultCameras = [camHUD];
 
 					var shaderabb:ShaderFilter = new ShaderFilter(new GraphicsShader("", Paths.shader('aberration')));
+					shaderabb.shader.data.aberration.value = [0.001];
+					shaderabb.shader.data.effectTime.value = [0.001];
 					camHUD.setFilters([shaderabb]);
-					if (shaderabb != null)
-					{
-						shaderabb.shader.data.aberration.value = [0.001];
-						shaderabb.shader.data.effectTime.value = [0.001];
-					}
 
 					var shitno:FlxSprite = new FlxSprite().loadGraphic(Paths.image('jumpscares/Shitno'));
 					shitno.cameras = [camHUD];

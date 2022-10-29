@@ -88,6 +88,9 @@ class PokedexState extends MusicBeatState
 		super.create();
 
 		glitch = new ShaderFilter(new GraphicsShader("", Paths.shader('glitch')));
+		glitch.shader.data.time.value = [0.0];
+		glitch.shader.data.prob.value = [0.0];
+		glitch.shader.data.intensityChromatic.value = [0.0];
 
 		trace('maxSelect: ' + maxSelect);
 

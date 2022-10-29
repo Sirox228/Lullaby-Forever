@@ -35,19 +35,20 @@ function onUpdate(elapsed) {
 function initFunction(params) {
     if (PlayState.staticValues.get('glitchySet') == null) {
         oppGlitchShader = new FlxGraphicsShader("", Paths.shader('isotope/redAberration'));
+        oppGlitchShader.data.time.value = [0.0];
+        oppGlitchShader.data.intensity.value = [0.0];
+        oppGlitchShader.data.initial.value = [0.0];
         trace('its happening?? idk');
-		PlayState.dadOpponent.shader = oppGlitchShader;
-        oppGlitchShader.data.time.value = [0];
-        oppGlitchShader.data.intensity.value = [0];
+        PlayState.dadOpponent.shader = oppGlitchShader;
         PlayState.staticValues.set('glitchySet', true);
     }
 
     if (PlayState.staticValues.get('vignetteSet') == null) {
         glitchEffect = new ShaderFilter(new GraphicsShader("", Paths.shader('isotope/vignetteGlitch')));
-        PlayState.camGame.setFilters([glitchEffect]);
         glitchEffect.shader.data.time.value = [0.0];
         glitchEffect.shader.data.prob.value = [0.0];
         glitchEffect.shader.data.vignetteIntensity.value = [0.5];
+        PlayState.camGame.setFilters([glitchEffect]);
         PlayState.staticValues.set('vignetteSet', true);
     }
 }

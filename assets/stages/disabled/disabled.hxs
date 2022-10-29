@@ -111,9 +111,11 @@ function onCreate() {
 
     // set up the distortion
     glitchPincushion = new FlxGraphicsShader("", Paths.shader('pincushion'));
+    glitchPincushion.data.prob.value = [0.0];
+    glitchPincushion.data.time.value = [0.0];
+    glitchPincushion.data.distort.value = [1.5];
 	background.shader = glitchPincushion;
     background2.shader = glitchPincushion;
-    glitchPincushion.data.distort.value = [1.5];
 
     questionareWiggles = new FlxSprite();
     questionareWiggles.frames = Paths.getSparrowAtlas('wiggles_questionare');

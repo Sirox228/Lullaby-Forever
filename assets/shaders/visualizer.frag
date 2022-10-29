@@ -1,7 +1,5 @@
 #pragma header
 
-uniform sampler2D song;
-
 void main()
 {
 	// Define some options

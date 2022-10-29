@@ -1,7 +1,7 @@
 #pragma header
 
-uniform float intensity;
 uniform int amount;
+uniform float intensity;
 uniform float time;
 
 vec2 uv;

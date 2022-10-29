@@ -4,6 +4,10 @@ function returnDescription()
 function eventFunction(params) {
 	PlayState.instance.stageBuild.forEach(function(sprite:FlxSprite){
 		var desaturateShader = new FlxGraphicsShader("", Paths.shader('desaturation'));
+		desaturateShader.data.desaturationAmount.value = [0.0];
+		desaturateShader.data.distortionTime.value = [0.0];
+		desaturateShader.data.amplitude.value = [-0.1];
+		desaturateShader.data.frequency.value = [8.0];
 		sprite.shader = desaturateShader;
 	});
 
@@ -26,6 +30,8 @@ function eventFunction(params) {
 		onComplete: function(tween:FlxTween)
 		{
 			PlayState.instance.vignette = new ShaderFilter(new GraphicsShader("", Paths.shader('brimstone/vignetteApparition')));
+			PlayState.instance.vignette.shader.data.time.value = [0.0];
+			PlayState.instance.vignette.shader.data.vignetteIntensity.value = [0.75];
 			PlayState.vignetteCam.setFilters([PlayState.instance.vignette]);
 			FlxTween.tween(PlayState.camGame, {zoom: PlayState.defaultCamZoom}, (Conductor.stepCrochet * 32) / 1000,
 				{ease: FlxEase.sineOut, startDelay: (Conductor.stepCrochet * 16) / 1000});
